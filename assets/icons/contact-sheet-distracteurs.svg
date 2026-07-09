@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="872" height="628" viewBox="0 0 872 628">
+  <rect width="100%" height="100%" fill="#faf6ec"/>
+  <text x="24" y="34" font-family="Segoe UI, sans-serif" font-size="20" font-weight="700" fill="#222">Asthmatik — distracteurs à éviter (hors carte)</text>
+  <g transform="translate(0,44)"><svg x="24" y="16" width="120" height="120" viewBox="0 0 120 120">
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
+  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
+    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
+    <path d="M45 57 q5 -7 10 0"/><path d="M65 57 q5 -7 10 0"/><path d="M50 70 q10 7 20 0"/><path d="M64 62 q12 -2 18 -7" opacity="0.45"/><path d="M64 67 q12 0 18 -3" opacity="0.3"/>
+             <path d="M86 40 q11 -7 15 2 q-9 7 -15 -2 z" fill="#9ed88f" stroke="#33302b"/><path d="M89 42 q6 1 9 4"/>
+  </g>
+</svg>
+  <rect x="22" y="142" width="8" height="8" rx="2" fill="#c58a1a"/>
+  <text x="36" y="149" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">Je respire tranquillement</text><svg x="236" y="16" width="120" height="120" viewBox="0 0 120 120">
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
+  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="60" cy="94" rx="36" ry="9" fill="#dfeaf7"/>
+    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
+    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
+    <path d="M45 57 q5 -7 10 0"/><path d="M65 57 q5 -7 10 0"/><path d="M50 70 q10 7 20 0"/><path d="M90 30 a11 11 0 1 0 5 20 a13 13 0 0 1 -5 -20 z" fill="#ffe08a" stroke="#33302b"/><path d="M78 21.8 l1.1199999999999999 3.08 3.08 1.1199999999999999 -3.08 1.1199999999999999 -1.1199999999999999 3.08 -1.1199999999999999 -3.08 -3.08 -1.1199999999999999 3.08 -1.1199999999999999 z" fill="#ffd447"/>
+             <path d="M70 44 h9 l-9 9 h9" stroke="#33302b"/>
+  </g>
+</svg>
+  <rect x="234" y="142" width="8" height="8" rx="2" fill="#c58a1a"/>
+  <text x="248" y="149" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">Je dors bien</text><svg x="448" y="16" width="120" height="120" viewBox="0 0 120 120">
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
+  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+
+      <path d="M60 22 q-6 9 0 13 q6 -4 0 -13 z" fill="#7fd4ff"/>
+      <path d="M42 40 h36 l-5 45 a4 4 0 0 1 -4 3.5 h-18 a4 4 0 0 1 -4 -3.5 z" fill="#eaf6ff" stroke="#33302b"/>
+      <path d="M46 58 h28 l-3.6 26 a3 3 0 0 1 -3 2.6 h-15 a3 3 0 0 1 -3 -2.6 z" fill="#7fd4ff" stroke="none"/>
+      <path d="M46 58 h28" stroke="#33302b"/>
+      <circle cx="55" cy="70" r="2" fill="#fff" stroke="#33302b"/><circle cx="66" cy="78" r="1.6" fill="#fff" stroke="#33302b"/>
+  </g>
+</svg>
+  <rect x="446" y="142" width="8" height="8" rx="2" fill="#c58a1a"/>
+  <text x="460" y="149" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">Je bois de l'eau</text><svg x="660" y="16" width="120" height="120" viewBox="0 0 120 120">
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
+  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
+    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
+    <path d="M45 57 q5 -7 10 0"/><path d="M65 57 q5 -7 10 0"/><path d="M47 68 q13 13 26 0 z" fill="#33302b" stroke="none"/><path d="M47 68 q13 13 26 0"/><circle cx="46" cy="65" r="4" fill="#ff9a9a" stroke="none"/><circle cx="74" cy="65" r="4" fill="#ff9a9a" stroke="none"/>
+             <path d="M92 34 c-3 -4 -9 -1 -9 4 c0 4 6 8 9 10 c3 -2 9 -6 9 -10 c0 -5 -6 -8 -9 -4 z" fill="#ff8fa3" stroke="#33302b"/>
+             <path d="M25 46 c-2.4 -3 -7 -1 -7 3 c0 3 4 5 7 6 c3 -1 7 -3 7 -6 c0 -4 -4.6 -6 -7 -3 z" fill="#ff8fa3" stroke="#33302b"/>
+  </g>
+</svg>
+  <rect x="658" y="142" width="8" height="8" rx="2" fill="#c58a1a"/>
+  <text x="672" y="149" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">Je suis content</text><svg x="24" y="212" width="120" height="120" viewBox="0 0 120 120">
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
+  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
+    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
+    <path d="M45 55 h10"/><path d="M65 55 h10"/><path d="M50 70 q10 7 20 0"/><path d="M20 46 q-5 12 2 24" opacity="0.4" stroke="#7fd4ff"/><path d="M100 46 q5 12 -2 24" opacity="0.4" stroke="#7fd4ff"/>
+             <path d="M60 15.8 l1.1199999999999999 3.08 3.08 1.1199999999999999 -3.08 1.1199999999999999 -1.1199999999999999 3.08 -1.1199999999999999 -3.08 -3.08 -1.1199999999999999 3.08 -1.1199999999999999 z" fill="#ffd447"/>
+  </g>
+</svg>
+  <rect x="22" y="338" width="8" height="8" rx="2" fill="#c58a1a"/>
+  <text x="36" y="345" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">Je me sens calme</text><svg x="236" y="212" width="120" height="120" viewBox="0 0 120 120">
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
+  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
+    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
+    <path d="M44 48 l10 3"/><path d="M76 48 l-10 3"/><path d="M45 55 h10"/><path d="M65 55 h10"/><path d="M50 74 q10 -7 20 0"/><path d="M34 84 q9 -6 17 -1" fill="#ffd4a3" stroke="#33302b"/><path d="M69 83 q8 -5 17 1" fill="#ffd4a3" stroke="#33302b"/>
+             <path d="M60 86 a3 3 0 1 1 -3 3 a6 6 0 1 1 6 -6 a9 9 0 1 1 -9 9" fill="none" stroke="#e23b3b" stroke-width="3"/>
+  </g>
+</svg>
+  <rect x="234" y="338" width="8" height="8" rx="2" fill="#7a6f63"/>
+  <text x="248" y="345" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">J'ai mal au ventre</text><svg x="448" y="212" width="120" height="120" viewBox="0 0 120 120">
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
+  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="90" cy="66" r="13" fill="#ffd4a3" stroke="#33302b"/>
+    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
+    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
+    <path d="M44 48 l10 3"/><path d="M76 48 l-10 3"/><path d="M45 55 h10"/><path d="M65 55 h10"/><rect x="49" y="67" width="22" height="9" rx="2" fill="#fff"/><path d="M56 67 v9 M63 67 v9 M49 71.5 h22"/><path d="M74 84 q9 -3 15 6" fill="#ffd4a3" stroke="#33302b"/>
+             <path d="M97 50 q4 -5 9 0 q1 7 -2 12 q-2 -4 -2 -7 q0 3 -2 7 q-4 -5 -3 -12 z" fill="#fff" stroke="#33302b"/>
+             <path d="M95 42 l4 -4 M100 42 l-3 -4 M107 48 l3 -3" stroke="#e23b3b"/>
+  </g>
+</svg>
+  <rect x="446" y="338" width="8" height="8" rx="2" fill="#7a6f63"/>
+  <text x="460" y="345" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">J'ai mal aux dents</text><svg x="660" y="212" width="120" height="120" viewBox="0 0 120 120">
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
+  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="74" cy="24" r="9" fill="#ffd4a3" stroke="#33302b"/>
+    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
+    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
+    <path d="M45 55 h10"/><path d="M65 55 h10"/><path d="M50 74 q10 -7 20 0"/><g transform="rotate(18 74 22)"><rect x="67" y="18" width="14" height="8" rx="2.5" fill="#ffd9a0" stroke="#33302b"/><path d="M74 18 v8 M70 22 h8" stroke="#33302b"/></g>
+             <path d="M90 17.8 l1.1199999999999999 3.08 3.08 1.1199999999999999 -3.08 1.1199999999999999 -1.1199999999999999 3.08 -1.1199999999999999 -3.08 -3.08 -1.1199999999999999 3.08 -1.1199999999999999 z" fill="#ffd447"/><path d="M58 11.4 l0.96 2.64 2.64 0.96 -2.64 0.96 -0.96 2.64 -0.96 -2.64 -2.64 -0.96 2.64 -0.96 z" fill="#ffd447"/>
+  </g>
+</svg>
+  <rect x="658" y="338" width="8" height="8" rx="2" fill="#7a6f63"/>
+  <text x="672" y="345" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">Je me suis cogné</text><svg x="24" y="408" width="120" height="120" viewBox="0 0 120 120">
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
+  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+
+    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
+    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
+    <circle cx="50" cy="55" r="3.3" fill="#33302b" stroke="none"/><circle cx="70" cy="55" r="3.3" fill="#33302b" stroke="none"/><path d="M50 74 q10 -7 20 0"/><path d="M66 74 q-3.3000000000000003 4.95 0 7.15 q3.3000000000000003 -2.2 0 -7.15 z" fill="#7fd4ff"/>
+             <ellipse cx="86" cy="30" rx="15" ry="11" fill="#fff" stroke="#33302b"/>
+             <circle cx="70" cy="44" r="3" fill="#fff" stroke="#33302b"/><circle cx="63" cy="50" r="2" fill="#fff" stroke="#33302b"/>
+             <path d="M80 27 q8 -7 13 0 q1 8 -7 9 l-8 5 3 -7 z" fill="#e6b06a" stroke="#33302b"/>
+             <circle cx="76" cy="35" r="2.2" fill="#fff" stroke="#33302b"/>
+  </g>
+</svg>
+  <rect x="22" y="534" width="8" height="8" rx="2" fill="#7a6f63"/>
+  <text x="36" y="541" font-family="Segoe UI, sans-serif" font-size="11" fill="#333">J'ai faim</text></g>
+</svg>
