@@ -11,6 +11,8 @@ export interface GameItem {
   slug: string;
   label: string;
   type: ItemType;
+  /** Feedback pédagogique affiché quand le joueur tape cette carte par erreur. */
+  why?: string;
 }
 
 export const ITEMS: GameItem[] = [
@@ -42,17 +44,17 @@ export const ITEMS: GameItem[] = [
   { slug: 'transpire',         label: 'Je transpire',                    type: 'gravity' },
   { slug: 'angoisse',          label: 'Je suis angoissé',                type: 'gravity' },
   // --- à éviter : positif / sain ---
-  { slug: 'en-forme',       label: 'Je suis en forme',                   type: 'avoid' },
-  { slug: 'respire-calme',  label: 'Je respire tranquillement',          type: 'avoid' },
-  { slug: 'dors-bien',      label: 'Je dors bien',                       type: 'avoid' },
-  { slug: 'bois-eau',       label: "Je bois de l'eau",                   type: 'avoid' },
-  { slug: 'content',        label: 'Je suis content',                    type: 'avoid' },
-  { slug: 'calme',          label: 'Je me sens calme',                   type: 'avoid' },
+  { slug: 'en-forme',       label: 'Je suis en forme',                   type: 'avoid', why: 'Être en forme, c\'est bon signe !' },
+  { slug: 'respire-calme',  label: 'Je respire tranquillement',          type: 'avoid', why: 'Respirer tranquillement, c\'est bon signe !' },
+  { slug: 'dors-bien',      label: 'Je dors bien',                       type: 'avoid', why: 'Bien dormir, c\'est bon signe !' },
+  { slug: 'bois-eau',       label: "Je bois de l'eau",                   type: 'avoid', why: 'Boire de l\'eau, c\'est sain !' },
+  { slug: 'content',        label: 'Je suis content',                    type: 'avoid', why: 'Être content, c\'est bon signe !' },
+  { slug: 'calme',          label: 'Je me sens calme',                   type: 'avoid', why: 'Se sentir calme, c\'est bon signe !' },
   // --- à éviter : non lié ---
-  { slug: 'mal-ventre',     label: "J'ai mal au ventre",                 type: 'avoid' },
-  { slug: 'mal-dents',      label: "J'ai mal aux dents",                 type: 'avoid' },
-  { slug: 'cogne',          label: 'Je me suis cogné',                   type: 'avoid' },
-  { slug: 'faim',           label: "J'ai faim",                          type: 'avoid' },
+  { slug: 'mal-ventre',     label: "J'ai mal au ventre",                 type: 'avoid', why: 'Le mal de ventre n\'est pas un signe d\'asthme' },
+  { slug: 'mal-dents',      label: "J'ai mal aux dents",                 type: 'avoid', why: 'Le mal de dents n\'est pas un signe d\'asthme' },
+  { slug: 'cogne',          label: 'Je me suis cogné',                   type: 'avoid', why: 'Se cogner n\'a pas de lien avec l\'asthme' },
+  { slug: 'faim',           label: "J'ai faim",                          type: 'avoid', why: 'Avoir faim n\'a pas de lien avec l\'asthme' },
 ];
 
 export const ITEMS_BY_TYPE: Record<ItemType, GameItem[]> = {

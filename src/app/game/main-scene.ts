@@ -42,6 +42,7 @@ export class MainScene extends Phaser.Scene {
   private lastWave = 0;
   private boss = false;
   private spawnTimer?: Phaser.Time.TimerEvent;
+  private whyText?: Phaser.GameObjects.Text;
 
   constructor() {
     super('main');
@@ -124,7 +125,7 @@ export class MainScene extends Phaser.Scene {
 
     card.once('pointerdown', () => {
       tween.stop();
-      this.onTap(item.type, card);
+      this.onTap(item, card);
     });
   }
 
@@ -160,13 +161,14 @@ export class MainScene extends Phaser.Scene {
   }
 
   // ---- interaction ----
-  private onTap(type: ItemType, card: Phaser.GameObjects.Container): void {
+  private onTap(item: GameItem, card: Phaser.GameObjects.Container): void {
     if (this.finished) {
       card.destroy();
       return;
     }
     const x = card.x;
     const y = card.y;
+    const type = item.type;
 
     if (type === 'good' || type === 'gravity') {
       this.score += 1;
@@ -200,6 +202,7 @@ export class MainScene extends Phaser.Scene {
       this.badTaps += 1;
       this.pop(x, y, '-1', '#ff8a8a');
       this.burst(x, y, RED, 8);
+      this.showWhy(item);
       this.audio.bad();
       this.buzz([30, 40, 30]);
       this.cameras.main.shake(120, 0.006);
@@ -207,6 +210,29 @@ export class MainScene extends Phaser.Scene {
       this.sd.onCombo(0);
       this.sd.onScore(this.score);
     }
+  }
+
+  /** Feedback pédagogique : explique pourquoi la carte tapée n'était pas une bonne cible. */
+  private showWhy(item: GameItem): void {
+    const msg = item.why ?? `« ${item.label} » n'est pas un symptôme d'asthme`;
+    this.whyText?.destroy(); // remplace un éventuel message encore affiché
+    const t = this.add
+      .text(this.scale.width / 2, this.scale.height - 110, msg, {
+        fontFamily: 'Arial',
+        fontSize: '17px',
+        fontStyle: 'bold',
+        color: '#ffffff',
+        align: 'center',
+        backgroundColor: '#a03030',
+        padding: { x: 14, y: 9 },
+        wordWrap: { width: this.scale.width - 70 },
+      })
+      .setOrigin(0.5)
+      .setDepth(1000)
+      .setAlpha(0);
+    this.whyText = t;
+    this.tweens.add({ targets: t, alpha: 1, y: t.y - 8, duration: 150 });
+    this.tweens.add({ targets: t, alpha: 0, delay: 1500, duration: 350, onComplete: () => t.destroy() });
   }
 
   private onComboMilestone(): void {
