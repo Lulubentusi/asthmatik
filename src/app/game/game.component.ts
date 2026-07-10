@@ -27,7 +27,26 @@ import { GameAudio } from './audio';
         <div class="overlay start">
           <h1>🫁 Asthmatik</h1>
           <p class="tag">Tape les <b>symptômes de l'asthme</b>.<br />Évite le <b>positif</b> et le <b>pas en lien</b>.</p>
-          <p class="goal">Objectif <b>{{ goal }} points</b> · +1 bonne cible, −1 mauvaise</p>
+
+          <div class="tuto">
+            <div class="tuto-card good">
+              <img src="icons/je-tousse.svg" alt="Je tousse" />
+              <span class="lbl">Symptôme</span>
+              <span class="badge">Tape ! +1</span>
+            </div>
+            <div class="tuto-card gravity">
+              <img src="icons/levres-bleues.svg" alt="J'ai les lèvres bleues" />
+              <span class="lbl">Gravité 🚨</span>
+              <span class="badge">Tape vite !</span>
+            </div>
+            <div class="tuto-card avoid">
+              <img src="icons/content.svg" alt="Je suis content" />
+              <span class="lbl">Pas un symptôme</span>
+              <span class="badge">Évite ! −1</span>
+            </div>
+          </div>
+
+          <p class="goal">Objectif <b>{{ goal }} points</b></p>
           <button class="cta" (click)="start()">JOUER</button>
         </div>
       }
@@ -69,6 +88,20 @@ import { GameAudio } from './audio';
       .overlay p { margin: 0; max-width: 330px; line-height: 1.45; }
       .tag { opacity: 0.95; } .goal { font-size: 13px; opacity: 0.72; }
       .sub { opacity: 0.85; font-size: 15px; }
+
+      /* ---- mini-tutoriel de l'écran d'accueil ---- */
+      .tuto { display: flex; gap: 10px; justify-content: center; }
+      .tuto-card {
+        display: flex; flex-direction: column; align-items: center; gap: 5px;
+        width: 102px; padding: 10px 6px; border-radius: 16px;
+        background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .tuto-card img { width: 64px; height: 64px; }
+      .tuto-card .lbl { font-size: 11px; opacity: 0.85; line-height: 1.2; text-align: center; }
+      .tuto-card .badge { font-size: 12px; font-weight: 800; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
+      .tuto-card.good .badge { color: #7dff9e; background: rgba(58, 208, 122, 0.16); border: 1px solid rgba(58, 208, 122, 0.45); }
+      .tuto-card.gravity .badge { color: #ffcf5a; background: rgba(255, 176, 32, 0.14); border: 1px solid rgba(255, 176, 32, 0.45); }
+      .tuto-card.avoid .badge { color: #ff8a8a; background: rgba(255, 93, 93, 0.14); border: 1px solid rgba(255, 93, 93, 0.45); }
 
       .cta {
         margin-top: 10px; padding: 16px 46px; font-size: 20px; font-weight: 800; border: none;
