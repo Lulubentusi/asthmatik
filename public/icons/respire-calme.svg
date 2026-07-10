@@ -1,10 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
-  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-
-    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
-    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
-    <path d="M45 57 q5 -7 10 0"/><path d="M65 57 q5 -7 10 0"/><path d="M50 70 q10 7 20 0"/><path d="M64 62 q12 -2 18 -7" opacity="0.45"/><path d="M64 67 q12 0 18 -3" opacity="0.3"/>
-             <path d="M86 40 q11 -7 15 2 q-9 7 -15 -2 z" fill="#9ed88f" stroke="#33302b"/><path d="M89 42 q6 1 9 4"/>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#dcf5e2" stroke="#b2e0c0" stroke-width="3"/>
+  <g fill="none" stroke="#33302b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- héros : fleur + souffle doux et régulier -->
+    <circle cx="40" cy="43" r="9" fill="#ffb3d9"/>
+    <circle cx="53" cy="50.5" r="9" fill="#ffb3d9"/>
+    <circle cx="53" cy="65.5" r="9" fill="#ffb3d9"/>
+    <circle cx="40" cy="73" r="9" fill="#ffb3d9"/>
+    <circle cx="27" cy="65.5" r="9" fill="#ffb3d9"/>
+    <circle cx="27" cy="50.5" r="9" fill="#ffb3d9"/>
+    <circle cx="40" cy="58" r="8" fill="#ffd447"/>
+    <path d="M66 44 q14 7 28 0" stroke="#7fd4ff"/>
+    <path d="M66 58 q14 7 32 0" stroke="#7fd4ff"/>
+    <path d="M66 72 q14 7 28 0" stroke="#7fd4ff"/>
   </g>
 </svg>

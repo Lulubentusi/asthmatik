@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
-  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-
-    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
-    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
-    <circle cx="50" cy="55" r="3.3" fill="#33302b" stroke="none"/><circle cx="70" cy="55" r="3.3" fill="#33302b" stroke="none"/><circle cx="60" cy="72" r="3.6" fill="#33302b" stroke="none"/><g stroke="none" fill="#33302b"><ellipse cx="90" cy="72" rx="5" ry="4"/><rect x="94" y="48" width="2.6" height="24"/><path d="M94 48 q9 1 9 9 q-4 -5 -9 -3 z"/></g>
-             <path d="M70 66 q6 -5 12 0" opacity="0.7"/><path d="M70 74 q6 -5 12 0" opacity="0.45"/>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fff4c2" stroke="#e8dc96" stroke-width="3"/>
+  <g fill="none" stroke="#33302b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- héros : grande note de musique + ondes de sifflement -->
+    <path d="M14 58 q5 -4 10 0 q-5 4 -10 0 z" fill="#ff8a9a"/>
+    <path d="M28 50 q7 9 0 18"/>
+    <path d="M38 42 q12 15 0 33"/>
+    <path d="M48 34 q17 21 0 47"/>
+    <path d="M84 28 v38"/>
+    <ellipse cx="76" cy="68" rx="9" ry="7" fill="#33302b" stroke="none"/>
+    <path d="M84 28 q14 4 10 16"/>
   </g>
 </svg>

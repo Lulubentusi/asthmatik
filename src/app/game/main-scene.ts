@@ -64,7 +64,7 @@ export class MainScene extends Phaser.Scene {
 
   preload(): void {
     for (const it of ITEMS) {
-      this.load.svg(it.slug, `icons/${it.slug}.svg`, { width: 104, height: 104 });
+      this.load.svg(it.slug, `icons/${it.slug}.svg`, { width: 128, height: 128 });
     }
   }
 
@@ -81,8 +81,9 @@ export class MainScene extends Phaser.Scene {
 
   // ---- spawn & difficulté ----
   private scheduleSpawn(): void {
-    const base = this.boss ? 320 : 950;
-    const delay = Math.max(this.boss ? 240 : 380, base - this.score * 16);
+    // cadence un peu plus espacée : les cartes restent plus longtemps à l'écran
+    const base = this.boss ? 380 : 1100;
+    const delay = Math.max(this.boss ? 300 : 450, base - this.score * 16);
     this.spawnTimer = this.time.addEvent({
       delay,
       callback: () => {
@@ -104,43 +105,75 @@ export class MainScene extends Phaser.Scene {
   private spawnOne(): void {
     if (this.finished) return;
     const item = this.pickItem();
-    const x = Phaser.Math.Between(58, this.scale.width - 58);
-    const sprite = this.add.image(x, -60, item.slug).setInteractive({ useHandCursor: true });
+    const x = Phaser.Math.Between(84, this.scale.width - 84);
+    const card = this.makeCard(item, x, -120);
 
-    const duration = Math.max(2200, 4300 - this.score * 55);
+    // plancher haut : laisser le temps de lire l'étiquette
+    const duration = Math.max(3000, 4800 - this.score * 50);
     const tween = this.tweens.add({
-      targets: sprite,
-      y: this.scale.height + 70,
+      targets: card,
+      y: this.scale.height + 130,
       duration,
       ease: 'Sine.easeIn',
       onComplete: () => {
         this.combo = 0; // raté : casse le combo (pas le score)
         this.sd.onCombo(0);
-        sprite.destroy();
+        card.destroy();
       },
     });
 
-    sprite.once('pointerdown', () => {
+    card.once('pointerdown', () => {
       tween.stop();
-      this.onTap(item.type, sprite);
+      this.onTap(item.type, card);
     });
   }
 
+  /** Carte cliquable : icône + étiquette lisible, groupées dans un container. */
+  private makeCard(item: GameItem, x: number, y: number): Phaser.GameObjects.Container {
+    const icon = this.add.image(0, 0, item.slug);
+
+    const label = this.add
+      .text(0, 70, item.label, {
+        fontFamily: 'Arial',
+        fontSize: '16px',
+        fontStyle: 'bold',
+        color: '#ffffff',
+        align: 'center',
+        wordWrap: { width: 150 },
+      })
+      .setOrigin(0.5, 0);
+
+    const bg = this.add.graphics();
+    bg.fillStyle(0x000000, 0.55);
+    bg.fillRoundedRect(-label.width / 2 - 8, 65, label.width + 16, label.height + 10, 10);
+
+    const card = this.add.container(x, y, [icon, bg, label]);
+    const w = Math.max(128, label.width + 16);
+    const top = -66;
+    const bottom = 75 + label.height;
+    card.setInteractive({
+      hitArea: new Phaser.Geom.Rectangle(-w / 2, top, w, bottom - top),
+      hitAreaCallback: Phaser.Geom.Rectangle.Contains,
+      useHandCursor: true,
+    });
+    return card;
+  }
+
   // ---- interaction ----
-  private onTap(type: ItemType, sprite: Phaser.GameObjects.Image): void {
+  private onTap(type: ItemType, card: Phaser.GameObjects.Container): void {
     if (this.finished) {
-      sprite.destroy();
+      card.destroy();
       return;
     }
-    const x = sprite.x;
-    const y = sprite.y;
+    const x = card.x;
+    const y = card.y;
 
     if (type === 'good' || type === 'gravity') {
       this.score += 1;
       this.combo += 1;
       this.goodTaps += 1;
       this.bestCombo = Math.max(this.bestCombo, this.combo);
-      this.tweens.add({ targets: sprite, scale: 1.4, alpha: 0, duration: 150, onComplete: () => sprite.destroy() });
+      this.tweens.add({ targets: card, scale: 1.4, alpha: 0, duration: 150, onComplete: () => card.destroy() });
 
       if (type === 'gravity') {
         this.styleScore += 3;
@@ -170,7 +203,7 @@ export class MainScene extends Phaser.Scene {
       this.audio.bad();
       this.buzz([30, 40, 30]);
       this.cameras.main.shake(120, 0.006);
-      sprite.destroy();
+      card.destroy();
       this.sd.onCombo(0);
       this.sd.onScore(this.score);
     }

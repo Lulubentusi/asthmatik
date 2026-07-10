@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
-  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-
-    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
-    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
-    <path d="M45 55 q5 4 10 0"/><path d="M65 55 q5 4 10 0"/><path d="M52 72 h16"/><path d="M60 56 q-5 9 0 13 q5 0 5 -3" fill="#ffd4a3"/><ellipse cx="60" cy="76" rx="3.2" ry="5.4" fill="#7fd4ff" stroke="#33302b"/>
-             <path d="M80 45.2 l1.2800000000000002 3.5200000000000005 3.5200000000000005 1.2800000000000002 -3.5200000000000005 1.2800000000000002 -1.2800000000000002 3.5200000000000005 -1.2800000000000002 -3.5200000000000005 -3.5200000000000005 -1.2800000000000002 3.5200000000000005 -1.2800000000000002 z" fill="#ffd447"/><path d="M40 68 l-11 4 3 9 11 -4 z" fill="#fff"/>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#eae3ff" stroke="#cbbdec" stroke-width="3"/>
+  <g fill="none" stroke="#33302b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- héros : gros nez rouge + grosse goutte -->
+    <circle cx="60" cy="48" r="25" fill="#ffd4a3"/>
+    <circle cx="50" cy="42" r="2.6" fill="#33302b" stroke="none"/>
+    <circle cx="70" cy="42" r="2.6" fill="#33302b" stroke="none"/>
+    <circle cx="60" cy="56" r="9" fill="#ff8a8a"/>
+    <path d="M60 68 q11 15 0 23 q-11 -8 0 -23 z" fill="#7fd4ff" stroke="none"/>
+    <circle cx="50" cy="70" r="3" fill="#7fd4ff" stroke="none"/>
+    <circle cx="72" cy="74" r="2.6" fill="#7fd4ff" stroke="none"/>
   </g>
 </svg>

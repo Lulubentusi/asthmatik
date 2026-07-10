@@ -1,9 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
-  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-
-    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
-    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
-    <circle cx="50" cy="57" r="3.3" fill="#33302b" stroke="none"/><circle cx="70" cy="57" r="3.3" fill="#33302b" stroke="none"/><path d="M44 49 l10 3"/><path d="M76 49 l-10 3"/><path d="M49 72 q5 5 10 0 q5 -5 10 0"/><path d="M82 44 q-6 9 0 13 q6 -4 0 -13 z" fill="#7fd4ff"/><path d="M30 32 v-8 M37 30 v-8 M44 32 v-8" stroke="#7fd4ff"/>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#ffe9d2" stroke="#f0c9a2" stroke-width="3"/>
+  <g fill="none" stroke="#33302b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- héros : visage paniqué qui tremble + points d'alerte -->
+    <circle cx="60" cy="64" r="24" fill="#ffd4a3"/>
+    <path d="M44 48 q7 -6 14 -3"/>
+    <path d="M62 45 q7 -3 14 3"/>
+    <circle cx="51" cy="60" r="6.5" fill="#ffffff"/>
+    <circle cx="69" cy="60" r="6.5" fill="#ffffff"/>
+    <circle cx="51" cy="61" r="2.6" fill="#33302b" stroke="none"/>
+    <circle cx="69" cy="61" r="2.6" fill="#33302b" stroke="none"/>
+    <path d="M53 78 q3.5 -4 7 0 q3.5 4 7 0"/>
+    <path d="M26 52 l-5 6 5 6 -5 6"/>
+    <path d="M94 52 l5 6 -5 6 5 6"/>
+    <path d="M50 20 v10" stroke="#ff5d5d"/>
+    <circle cx="50" cy="37" r="2.6" fill="#ff5d5d" stroke="none"/>
+    <path d="M66 18 v12" stroke="#ff5d5d"/>
+    <circle cx="66" cy="38" r="2.6" fill="#ff5d5d" stroke="none"/>
   </g>
 </svg>

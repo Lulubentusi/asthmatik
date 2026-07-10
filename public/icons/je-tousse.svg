@@ -1,10 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
-  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-
-    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
-    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
-    <path d="M45 55 h10"/><path d="M65 55 h10"/><ellipse cx="58" cy="72" rx="5" ry="6" fill="#33302b" stroke="none"/><circle cx="84" cy="76" r="9" fill="#ffd4a3"/><path d="M76 76 h16 M80 72 v8 M84 71 v10 M88 72 v8"/>
-             <circle cx="98" cy="60" r="4" fill="#fff"/><circle cx="106" cy="66" r="3" fill="#fff"/><circle cx="100" cy="72" r="2.5" fill="#fff"/>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#ffe3ea" stroke="#f0bcc9" stroke-width="3"/>
+  <g fill="none" stroke="#33302b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- visage de profil qui tousse -->
+    <circle cx="34" cy="62" r="19" fill="#ffd4a3"/>
+    <path d="M26 56 l9 3"/>
+    <ellipse cx="47" cy="68" rx="5.5" ry="7.5" fill="#33302b" stroke="none"/>
+    <!-- héros : gros nuage de toux -->
+    <path d="M62 74 q-8 -2 -8 -10 q0 -9 9 -10 q1 -12 14 -12 q11 0 14 9 q11 0 11 11 q0 12 -12 12 z" fill="#ffffff"/>
+    <circle cx="66" cy="88" r="4" fill="#7fd4ff" stroke="none"/>
+    <circle cx="80" cy="94" r="5" fill="#7fd4ff" stroke="none"/>
+    <circle cx="94" cy="86" r="4" fill="#7fd4ff" stroke="none"/>
   </g>
 </svg>
