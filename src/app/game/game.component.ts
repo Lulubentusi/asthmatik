@@ -30,17 +30,17 @@ import { GameAudio } from './audio';
 
           <div class="tuto">
             <div class="tuto-card good">
-              <img src="icons/je-tousse.svg" alt="Je tousse" />
+              <img src="cards/je-tousse.png" alt="Je tousse" />
               <span class="lbl">Symptôme</span>
               <span class="badge">Tape ! +1</span>
             </div>
             <div class="tuto-card gravity">
-              <img src="icons/levres-bleues.svg" alt="J'ai les lèvres bleues" />
+              <img src="cards/levres-bleues.png" alt="J'ai les lèvres bleues" />
               <span class="lbl">Gravité 🚨</span>
               <span class="badge">Tape vite !</span>
             </div>
             <div class="tuto-card avoid">
-              <img src="icons/content.svg" alt="Je suis content" />
+              <img src="cards/content.png" alt="Je suis content" />
               <span class="lbl">Pas un symptôme</span>
               <span class="badge">Évite ! −1</span>
             </div>

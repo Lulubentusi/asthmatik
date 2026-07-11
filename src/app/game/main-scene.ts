@@ -65,7 +65,8 @@ export class MainScene extends Phaser.Scene {
 
   preload(): void {
     for (const it of ITEMS) {
-      this.load.svg(it.slug, `icons/${it.slug}.svg`, { width: 128, height: 128 });
+      if (it.png) this.load.image(it.slug, `cards/${it.slug}.png`);
+      else this.load.svg(it.slug, `icons/${it.slug}.svg`, { width: 128, height: 128 });
     }
   }
 
@@ -131,7 +132,7 @@ export class MainScene extends Phaser.Scene {
 
   /** Carte cliquable : icône + étiquette lisible, groupées dans un container. */
   private makeCard(item: GameItem, x: number, y: number): Phaser.GameObjects.Container {
-    const icon = this.add.image(0, 0, item.slug);
+    const icon = this.add.image(0, 0, item.slug).setDisplaySize(128, 128); // normalise SVG 128 et PNG 256
 
     const label = this.add
       .text(0, 70, item.label, {
