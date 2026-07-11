@@ -1,11 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fffdf5" stroke="#e6ddc4" stroke-width="2"/>
-  <g fill="none" stroke="#33302b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-
-    <path d="M33 52 Q33 22 60 22 Q87 22 87 52 Q60 40 33 52 Z" fill="#8a5a34"/>
-    <circle cx="60" cy="58" r="27" fill="#ffd4a3"/>
-    <path d="M45 57 q5 -7 10 0"/><path d="M65 57 q5 -7 10 0"/><path d="M47 68 q13 13 26 0 z" fill="#33302b" stroke="none"/><path d="M47 68 q13 13 26 0"/><circle cx="46" cy="65" r="4" fill="#ff9a9a" stroke="none"/><circle cx="74" cy="65" r="4" fill="#ff9a9a" stroke="none"/>
-             <circle cx="86" cy="66" r="6" fill="#ffd4a3"/><path d="M80 80 q10 -6 8 -18" stroke-width="6"/>
-             <path d="M28 26 l1.6 4.4 4.4 1.6 -4.4 1.6 -1.6 4.4 -1.6 -4.4 -4.4 -1.6 4.4 -1.6 z" fill="#ffd447"/><path d="M96 35.2 l1.2800000000000002 3.5200000000000005 3.5200000000000005 1.2800000000000002 -3.5200000000000005 1.2800000000000002 -1.2800000000000002 3.5200000000000005 -1.2800000000000002 -3.5200000000000005 -3.5200000000000005 -1.2800000000000002 3.5200000000000005 -1.2800000000000002 z" fill="#ffd447"/>
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#fff4c2" stroke="#e8dc96" stroke-width="3"/>
+  <g fill="none" stroke="#33302b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- héros : gros bras musclé + étoiles -->
+    <path d="M24 82 q0 -24 20 -28 l5 -16 q3 -9 12 -6 q9 3 6 12 l-5 15 q26 0 28 24 v6 q0 7 -7 7 h-52 q-7 0 -7 -8 z" fill="#ffd4a3"/>
+    <path d="M44 66 q10 -10 22 -6"/>
+    <path d="M92 26 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5 z" fill="#ffd447" stroke="none"/>
+    <path d="M26 26 l2 4.5 4.5 2 -4.5 2 -2 4.5 -2 -4.5 -4.5 -2 4.5 -2 z" fill="#ffd447" stroke="none"/>
   </g>
 </svg>
