@@ -65,8 +65,7 @@ export class MainScene extends Phaser.Scene {
 
   preload(): void {
     for (const it of ITEMS) {
-      if (it.png) this.load.image(it.slug, `cards/${it.slug}.png`);
-      else this.load.svg(it.slug, `icons/${it.slug}.svg`, { width: 128, height: 128 });
+      this.load.image(it.slug, `cards/${it.slug}.webp`);
     }
   }
 
