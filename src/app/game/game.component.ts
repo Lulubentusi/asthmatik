@@ -3,10 +3,12 @@ import Phaser from 'phaser';
 import { MainScene, WinInfo, SceneData } from './main-scene';
 import { GOAL, digitFor, groupOf, computeRank, Rank } from './config';
 import { GameAudio } from './audio';
+import { CardsGalleryComponent } from './cards-gallery.component';
 
 @Component({
   selector: 'app-game',
   standalone: true,
+  imports: [CardsGalleryComponent],
   template: `
     <div #wrap class="wrap">
       <div #host class="host"></div>
@@ -38,7 +40,7 @@ import { GameAudio } from './audio';
             <div class="tuto-card gravity">
               <img src="cards/levres-bleues-f.webp" alt="J'ai les lèvres bleues" />
               <span class="lbl">Gravité 🚨</span>
-              <span class="badge">Tape vite !</span>
+              <span class="badge">Tape ! +1</span>
             </div>
             <div class="tuto-card avoid">
               <img src="cards/content.webp" alt="Je suis content" />
@@ -49,7 +51,12 @@ import { GameAudio } from './audio';
 
           <p class="goal">Objectif <b>{{ goal }} points</b></p>
           <button class="cta" (click)="start()">JOUER</button>
+          <button class="cta ghost small" (click)="showCards = true">🃏 Voir toutes les cartes</button>
         </div>
+      }
+
+      @if (showCards) {
+        <app-cards-gallery (closed)="showCards = false" />
       }
 
       @if (confirmHome) {
@@ -129,6 +136,7 @@ import { GameAudio } from './audio';
         box-shadow: 0 8px 26px rgba(21, 115, 71, 0.4); animation: pulse 1.6s ease-in-out infinite;
       }
       .cta.ghost { background: #fff; color: #1d3557; border: 2px solid rgba(29, 53, 87, 0.35); box-shadow: 0 4px 14px rgba(29, 53, 87, 0.18); animation: none; }
+      .cta.small { margin-top: 0; padding: 10px 24px; font-size: 15px; }
       .cta.danger { background: #ff5d5d; color: #fff; box-shadow: 0 8px 26px rgba(199, 53, 53, 0.4); animation: none; }
       .confirm-btns { display: flex; gap: 12px; }
       .confirm-btns .cta { margin-top: 4px; padding: 14px 28px; font-size: 17px; }
@@ -197,6 +205,7 @@ export class GameComponent implements OnDestroy {
   won = false;
   muted = false;
   confirmHome = false;
+  showCards = false;
 
   digit: number | null = null;
   group: 'A' | 'B' = 'A';
