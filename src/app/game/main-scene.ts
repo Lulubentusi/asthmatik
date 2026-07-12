@@ -64,10 +64,42 @@ export class MainScene extends Phaser.Scene {
   }
 
   preload(): void {
+    this.showLoading();
     for (const it of ITEMS) {
       this.load.image(it.slug, `cards/${it.slug}.webp`); // variante garçon
       this.load.image(`${it.slug}-f`, `cards/${it.slug}-f.webp`); // variante fille
     }
+  }
+
+  /** Barre de progression pendant le chargement des cartes — évite l'écran noir sur connexion lente. */
+  private showLoading(): void {
+    const cx = this.scale.width / 2;
+    const cy = this.scale.height / 2;
+    const barW = 250;
+    const barH = 16;
+    const radius = barH / 2;
+
+    const label = this.add
+      .text(cx, cy - 36, 'Chargement…', { fontFamily: 'Arial', fontSize: '20px', fontStyle: 'bold', color: '#ffffff' })
+      .setOrigin(0.5);
+    const track = this.add.graphics();
+    track.fillStyle(0xffffff, 0.14);
+    track.fillRoundedRect(cx - barW / 2, cy - barH / 2, barW, barH, radius);
+    const fill = this.add.graphics();
+
+    const onProgress = (p: number) => {
+      fill.clear();
+      fill.fillStyle(GREEN, 1);
+      // largeur mini = hauteur : en dessous, le rectangle arrondi dégénère
+      fill.fillRoundedRect(cx - barW / 2, cy - barH / 2, Math.max(barH, barW * p), barH, radius);
+    };
+    this.load.on('progress', onProgress);
+    this.load.once('complete', () => {
+      this.load.off('progress', onProgress);
+      label.destroy();
+      track.destroy();
+      fill.destroy();
+    });
   }
 
   create(): void {
