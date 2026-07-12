@@ -65,7 +65,8 @@ export class MainScene extends Phaser.Scene {
 
   preload(): void {
     for (const it of ITEMS) {
-      this.load.image(it.slug, `cards/${it.slug}.webp`);
+      this.load.image(it.slug, `cards/${it.slug}.webp`); // variante garçon
+      this.load.image(`${it.slug}-f`, `cards/${it.slug}-f.webp`); // variante fille
     }
   }
 
@@ -131,7 +132,9 @@ export class MainScene extends Phaser.Scene {
 
   /** Carte cliquable : icône + étiquette lisible, groupées dans un container. */
   private makeCard(item: GameItem, x: number, y: number): Phaser.GameObjects.Container {
-    const icon = this.add.image(0, 0, item.slug).setDisplaySize(128, 128); // normalise SVG 128 et PNG 256
+    // variante garçon ou fille au hasard — même carte, même comportement de jeu
+    const skin = Math.random() < 0.5 ? item.slug : `${item.slug}-f`;
+    const icon = this.add.image(0, 0, skin).setDisplaySize(128, 128);
 
     const label = this.add
       .text(0, 70, item.label, {

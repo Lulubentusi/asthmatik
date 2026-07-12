@@ -3,7 +3,8 @@
  *  - 'good'    : symptôme d'asthme / allergie / fatigue  -> à cliquer (+1)
  *  - 'gravity' : signe de gravité -> à cliquer (+1) + effet URGENCE
  *  - 'avoid'   : positif / non lié -> à éviter (-1)
- * Les slugs correspondent aux SVG dans public/icons/.
+ * Les slugs correspondent aux illustrations public/cards/<slug>.webp (garçon)
+ * et public/cards/<slug>-f.webp (fille) ; les SVG public/icons/ sont l'ancien jeu d'icônes.
  */
 export type ItemType = 'good' | 'gravity' | 'avoid';
 

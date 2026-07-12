@@ -35,7 +35,7 @@ import { GameAudio } from './audio';
               <span class="badge">Tape ! +1</span>
             </div>
             <div class="tuto-card gravity">
-              <img src="cards/levres-bleues.webp" alt="J'ai les lèvres bleues" />
+              <img src="cards/levres-bleues-f.webp" alt="J'ai les lèvres bleues" />
               <span class="lbl">Gravité 🚨</span>
               <span class="badge">Tape vite !</span>
             </div>
