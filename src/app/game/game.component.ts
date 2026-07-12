@@ -14,6 +14,7 @@ import { GameAudio } from './audio';
       @if (started && !won) {
         <div class="hud">
           <button class="icon-btn mute" (click)="toggleMute()" aria-label="son">{{ muted ? '🔇' : '🔊' }}</button>
+          <button class="icon-btn home" (click)="askGoHome()" aria-label="retour à l'accueil">🏠</button>
           <button class="icon-btn restart" (click)="replay()" aria-label="recommencer">↺</button>
           <div class="bar"><span [style.width.%]="(score / goal) * 100"></span></div>
           <div class="score">{{ score }} / {{ goal }}</div>
@@ -26,7 +27,7 @@ import { GameAudio } from './audio';
       @if (!started) {
         <div class="overlay start">
           <h1>🫁 Asthmatik</h1>
-          <p class="tag">Tape les <b>symptômes de l'asthme</b>.<br />Évite le <b>positif</b> et le <b>pas en lien</b>.</p>
+          <p class="tag">Tape les <b>symptômes de l'asthme</b>.<br />Évite ce qui <b>n'est pas un symptôme</b> ou les <b>symptômes pas en lien avec l'asthme</b>.</p>
 
           <div class="tuto">
             <div class="tuto-card good">
@@ -51,8 +52,20 @@ import { GameAudio } from './audio';
         </div>
       }
 
+      @if (confirmHome) {
+        <div class="overlay confirm">
+          <h2>Retour à l'accueil ?</h2>
+          <p class="sub">Ta partie en cours sera perdue.</p>
+          <div class="confirm-btns">
+            <button class="cta ghost" (click)="cancelGoHome()">Continuer</button>
+            <button class="cta danger" (click)="goHome()">Quitter</button>
+          </div>
+        </div>
+      }
+
       @if (won) {
         <div class="overlay win">
+          <button class="icon-btn home" (click)="goHome()" aria-label="retour à l'accueil">🏠</button>
           <div class="rank" [attr.data-rank]="rank">{{ rank }}</div>
           <h2>Bravo !</h2>
           <p class="sub">Ton chiffre pour le cadena</p>
@@ -116,6 +129,9 @@ import { GameAudio } from './audio';
         box-shadow: 0 8px 26px rgba(21, 115, 71, 0.4); animation: pulse 1.6s ease-in-out infinite;
       }
       .cta.ghost { background: #fff; color: #1d3557; border: 2px solid rgba(29, 53, 87, 0.35); box-shadow: 0 4px 14px rgba(29, 53, 87, 0.18); animation: none; }
+      .cta.danger { background: #ff5d5d; color: #fff; box-shadow: 0 8px 26px rgba(199, 53, 53, 0.4); animation: none; }
+      .confirm-btns { display: flex; gap: 12px; }
+      .confirm-btns .cta { margin-top: 4px; padding: 14px 28px; font-size: 17px; }
       .cta:active { transform: scale(0.96); }
       @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
@@ -156,9 +172,10 @@ import { GameAudio } from './audio';
       }
       .mute { left: calc(12px + env(safe-area-inset-left, 0px)); }
       .restart { right: calc(12px + env(safe-area-inset-right, 0px)); }
+      .home { right: calc(54px + env(safe-area-inset-right, 0px)); }
       .bar {
         height: 14px; background: rgba(255, 255, 255, 0.7); border: 2px solid #fff; border-radius: 999px;
-        overflow: hidden; margin: 4px 52px 0; box-shadow: 0 3px 8px rgba(29, 53, 87, 0.18);
+        overflow: hidden; margin: 4px 94px 0; box-shadow: 0 3px 8px rgba(29, 53, 87, 0.18);
       }
       .bar span { display: block; height: 100%; background: linear-gradient(90deg, #3ad07a, #7fffa8); transition: width 0.2s ease; }
       .score { margin-top: 6px; text-align: center; color: #1d3557; font-weight: 800; text-shadow: 0 1px 0 #fff; }
@@ -179,6 +196,7 @@ export class GameComponent implements OnDestroy {
   started = false;
   won = false;
   muted = false;
+  confirmHome = false;
 
   digit: number | null = null;
   group: 'A' | 'B' = 'A';
@@ -208,6 +226,27 @@ export class GameComponent implements OnDestroy {
     this.combo = 0;
     this.rank = null;
     this.createGame();
+  }
+
+  askGoHome(): void {
+    this.confirmHome = true;
+    this.game?.scene.pause('main');
+  }
+
+  cancelGoHome(): void {
+    this.confirmHome = false;
+    this.game?.scene.resume('main');
+  }
+
+  goHome(): void {
+    this.confirmHome = false;
+    this.game?.destroy(true);
+    this.game = undefined;
+    this.started = false;
+    this.won = false;
+    this.score = 0;
+    this.combo = 0;
+    this.rank = null;
   }
 
   toggleMute(): void {
