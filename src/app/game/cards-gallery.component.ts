@@ -72,17 +72,17 @@ import { GameItem, ITEMS_BY_TYPE } from './items';
       section.good .badge { color: #157347; background: rgba(58, 208, 122, 0.18); border: 1px solid rgba(21, 115, 71, 0.4); }
       section.avoid .badge { color: #c73535; background: rgba(255, 93, 93, 0.16); border: 1px solid rgba(199, 53, 53, 0.4); }
 
-      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(102px, 1fr)); gap: 10px; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
       .card {
-        display: flex; flex-direction: column; align-items: center; gap: 5px; margin: 0;
-        padding: 10px 6px; border-radius: 16px; background: #fff; border: 3px solid #fff;
+        display: flex; flex-direction: column; align-items: center; gap: 7px; margin: 0;
+        padding: 12px 10px; border-radius: 16px; background: #fff; border: 3px solid #fff;
         box-shadow: 0 6px 16px rgba(29, 53, 87, 0.22);
       }
       section.gravity .card { border-color: #ffd9a0; }
       section.avoid .card { border-color: #ffd6d6; }
-      .card img { width: 72px; height: 72px; border-radius: 12px; }
-      .card figcaption { font-size: 11px; font-weight: 600; line-height: 1.2; text-align: center; opacity: 0.9; }
-      .card small { display: block; margin-top: 3px; font-size: 10px; font-weight: 400; opacity: 0.75; }
+      .card img { width: 100%; height: auto; aspect-ratio: 1; border-radius: 12px; }
+      .card figcaption { font-size: 13px; font-weight: 600; line-height: 1.25; text-align: center; opacity: 0.9; }
+      .card small { display: block; margin-top: 4px; font-size: 11px; font-weight: 400; opacity: 0.75; }
     `,
   ],
 })
