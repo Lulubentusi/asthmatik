@@ -141,13 +141,21 @@ import { GameAudio } from './audio';
       .rank[data-rank='C'] { background: #c9c2b0; }
 
       /* ---- HUD ---- */
-      .hud { position: absolute; top: 0; left: 0; right: 0; padding: 12px 14px; pointer-events: none; }
+      .hud {
+        position: absolute; top: 0; left: 0; right: 0; pointer-events: none;
+        /* reste sous l'encoche / la barre de statut du mobile (safe area) */
+        padding: calc(12px + env(safe-area-inset-top, 0px))
+          calc(14px + env(safe-area-inset-right, 0px)) 12px
+          calc(14px + env(safe-area-inset-left, 0px));
+      }
       .icon-btn {
-        position: absolute; top: 10px; pointer-events: auto; background: rgba(255, 255, 255, 0.85);
+        position: absolute; top: calc(10px + env(safe-area-inset-top, 0px)); pointer-events: auto;
+        background: rgba(255, 255, 255, 0.85);
         border: none; border-radius: 10px; color: #1d3557; font-size: 18px; width: 36px; height: 32px; cursor: pointer;
         box-shadow: 0 3px 8px rgba(29, 53, 87, 0.25);
       }
-      .mute { left: 12px; } .restart { right: 12px; }
+      .mute { left: calc(12px + env(safe-area-inset-left, 0px)); }
+      .restart { right: calc(12px + env(safe-area-inset-right, 0px)); }
       .bar {
         height: 14px; background: rgba(255, 255, 255, 0.7); border: 2px solid #fff; border-radius: 999px;
         overflow: hidden; margin: 4px 52px 0; box-shadow: 0 3px 8px rgba(29, 53, 87, 0.18);
