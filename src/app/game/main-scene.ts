@@ -80,10 +80,10 @@ export class MainScene extends Phaser.Scene {
     const radius = barH / 2;
 
     const label = this.add
-      .text(cx, cy - 36, 'Chargement…', { fontFamily: 'Arial', fontSize: '20px', fontStyle: 'bold', color: '#ffffff' })
+      .text(cx, cy - 36, 'Chargement…', { fontFamily: 'Arial', fontSize: '20px', fontStyle: 'bold', color: '#1d3557' })
       .setOrigin(0.5);
     const track = this.add.graphics();
-    track.fillStyle(0xffffff, 0.14);
+    track.fillStyle(0xffffff, 0.75);
     track.fillRoundedRect(cx - barW / 2, cy - barH / 2, barW, barH, radius);
     const fill = this.add.graphics();
 
@@ -162,10 +162,18 @@ export class MainScene extends Phaser.Scene {
     });
   }
 
-  /** Carte cliquable : icône + étiquette lisible, groupées dans un container. */
+  /** Carte cliquable : icône sur cadre autocollant blanc + étiquette en pastille, groupées dans un container. */
   private makeCard(item: GameItem, x: number, y: number): Phaser.GameObjects.Container {
     // variante garçon ou fille au hasard — même carte, même comportement de jeu
     const skin = Math.random() < 0.5 ? item.slug : `${item.slug}-f`;
+
+    // cadre façon autocollant : ombre portée douce + bordure blanche épaisse
+    const plate = this.add.graphics();
+    plate.fillStyle(0x1d3557, 0.18);
+    plate.fillRoundedRect(-70, -64, 140, 140, 22);
+    plate.fillStyle(0xffffff, 1);
+    plate.fillRoundedRect(-70, -70, 140, 140, 22);
+
     const icon = this.add.image(0, 0, skin).setDisplaySize(128, 128);
 
     const label = this.add
@@ -173,20 +181,22 @@ export class MainScene extends Phaser.Scene {
         fontFamily: 'Arial',
         fontSize: '16px',
         fontStyle: 'bold',
-        color: '#ffffff',
+        color: '#22304d',
         align: 'center',
         wordWrap: { width: 150 },
       })
       .setOrigin(0.5, 0);
 
     const bg = this.add.graphics();
-    bg.fillStyle(0x000000, 0.55);
+    bg.fillStyle(0x1d3557, 0.15);
+    bg.fillRoundedRect(-label.width / 2 - 8, 68, label.width + 16, label.height + 10, 10);
+    bg.fillStyle(0xffffff, 0.95);
     bg.fillRoundedRect(-label.width / 2 - 8, 65, label.width + 16, label.height + 10, 10);
 
-    const card = this.add.container(x, y, [icon, bg, label]);
-    const w = Math.max(128, label.width + 16);
-    const top = -66;
-    const bottom = 75 + label.height;
+    const card = this.add.container(x, y, [plate, icon, bg, label]);
+    const w = Math.max(144, label.width + 16);
+    const top = -72;
+    const bottom = 78 + label.height;
     card.setInteractive({
       hitArea: new Phaser.Geom.Rectangle(-w / 2, top, w, bottom - top),
       hitAreaCallback: Phaser.Geom.Rectangle.Contains,
@@ -214,12 +224,12 @@ export class MainScene extends Phaser.Scene {
 
       if (type === 'gravity') {
         this.styleScore += 3;
-        this.pop(x, y, '+1', '#ffcf5a');
+        this.pop(x, y, '+1', '#ff9410');
         this.burst(x, y, ORANGE, 16);
         this.triggerUrgence();
       } else {
         this.styleScore += 1;
-        this.pop(x, y, '+1', '#7dff9e');
+        this.pop(x, y, '+1', '#1f9d55');
         this.burst(x, y, GREEN, 12);
         this.audio.good();
         this.buzz(22);
@@ -235,7 +245,7 @@ export class MainScene extends Phaser.Scene {
       this.score = Math.max(0, this.score - 1);
       this.combo = 0;
       this.badTaps += 1;
-      this.pop(x, y, '-1', '#ff8a8a');
+      this.pop(x, y, '-1', '#e04545');
       this.burst(x, y, RED, 8);
       this.showWhy(item);
       this.audio.bad();
@@ -274,7 +284,7 @@ export class MainScene extends Phaser.Scene {
     this.audio.combo(this.combo);
     this.buzz([15, 30, 15]);
     this.hitStop(90);
-    this.pop(this.scale.width / 2, 210, `COMBO ×${this.combo}`, '#ffd447');
+    this.pop(this.scale.width / 2, 210, `COMBO ×${this.combo}`, '#ff9410');
   }
 
   // ---- vagues / boss ----
@@ -288,7 +298,7 @@ export class MainScene extends Phaser.Scene {
     const wave = Math.floor(this.score / 10);
     if (wave > this.lastWave && this.score < this.goal - 5) {
       this.lastWave = wave;
-      this.banner(`VAGUE ${wave + 1}`, '#9fe3ff');
+      this.banner(`VAGUE ${wave + 1}`, '#2b78c2');
     }
   }
 
@@ -342,13 +352,15 @@ export class MainScene extends Phaser.Scene {
   private pop(x: number, y: number, txt: string, color: string): void {
     const t = this.add
       .text(x, y, txt, { fontFamily: 'Arial', fontSize: '32px', fontStyle: 'bold', color })
+      .setStroke('#ffffff', 6) // contour blanc façon autocollant, lisible sur le fond clair
       .setOrigin(0.5);
     this.tweens.add({ targets: t, y: y - 54, alpha: 0, duration: 640, onComplete: () => t.destroy() });
   }
 
-  private banner(text: string, color = '#ffd447'): void {
+  private banner(text: string, color = '#ff9410'): void {
     const b = this.add
       .text(this.scale.width / 2, 150, text, { fontFamily: 'Arial', fontSize: '30px', fontStyle: 'bold', color })
+      .setStroke('#ffffff', 8)
       .setOrigin(0.5)
       .setAlpha(0);
     this.tweens.add({ targets: b, alpha: 1, scale: { from: 0.6, to: 1 }, duration: 220 });

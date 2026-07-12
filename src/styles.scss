@@ -1,9 +1,9 @@
-/* Styles globaux — plein écran portrait, pas de scroll, thème sombre. */
+/* Styles globaux — plein écran portrait, pas de scroll, thème jour (raccord avec les cartes). */
 html,
 body {
   height: 100%;
   margin: 0;
-  background: #0f1220;
+  background: #8ecdf7;
   overscroll-behavior: none;
   -webkit-user-select: none;
   user-select: none;

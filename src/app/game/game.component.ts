@@ -70,7 +70,8 @@ import { GameAudio } from './audio';
       :host { display: block; }
       .wrap {
         position: fixed; inset: 0; overflow: hidden; touch-action: manipulation;
-        background: radial-gradient(120% 90% at 50% 0%, #1a2140 0%, #0f1220 55%, #080a14 100%);
+        /* ciel -> verdure, comme les décors de parc des cartes */
+        background: linear-gradient(180deg, #8ecdf7 0%, #c8e9ff 42%, #e8f7e0 74%, #c9ecba 100%);
       }
       .host { position: absolute; inset: 0; }
 
@@ -78,72 +79,82 @@ import { GameAudio } from './audio';
       .overlay {
         position: absolute; inset: 0; display: flex; flex-direction: column; gap: 14px;
         align-items: center; justify-content: center; text-align: center; padding: 24px;
-        color: #fff; font-family: 'Segoe UI', system-ui, sans-serif;
-        background: rgba(8, 10, 20, 0.55); backdrop-filter: blur(3px); animation: fade 0.25s ease;
+        color: #22304d; font-family: 'Segoe UI', system-ui, sans-serif;
+        background: rgba(235, 248, 255, 0.6); backdrop-filter: blur(3px); animation: fade 0.25s ease;
       }
-      .overlay.win { background: rgba(8, 10, 20, 0.88); backdrop-filter: blur(6px); }
+      .overlay.win { background: rgba(235, 248, 255, 0.88); backdrop-filter: blur(6px); }
       @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
-      .overlay h1 { font-size: 40px; margin: 0; letter-spacing: 0.5px; text-shadow: 0 0 22px rgba(58, 208, 122, 0.6); }
-      .overlay h2 { font-size: 30px; margin: 0; }
+      .overlay h1 {
+        font-size: 40px; margin: 0; letter-spacing: 0.5px; color: #1d3557;
+        text-shadow: 0 2px 0 #fff, 0 6px 18px rgba(58, 208, 122, 0.45);
+      }
+      .overlay h2 { font-size: 30px; margin: 0; color: #1d3557; text-shadow: 0 2px 0 #fff; }
       .overlay p { margin: 0; max-width: 330px; line-height: 1.45; }
-      .tag { opacity: 0.95; } .goal { font-size: 13px; opacity: 0.72; }
+      .tag { opacity: 0.95; } .goal { font-size: 13px; opacity: 0.8; }
       .sub { opacity: 0.85; font-size: 15px; }
 
-      /* ---- mini-tutoriel de l'écran d'accueil ---- */
+      /* ---- mini-tutoriel de l'écran d'accueil : cartes façon autocollant ---- */
       .tuto { display: flex; gap: 10px; justify-content: center; }
       .tuto-card {
         display: flex; flex-direction: column; align-items: center; gap: 5px;
         width: 102px; padding: 10px 6px; border-radius: 16px;
-        background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12);
+        background: #fff; border: 3px solid #fff;
+        box-shadow: 0 6px 16px rgba(29, 53, 87, 0.22);
       }
-      .tuto-card img { width: 64px; height: 64px; }
-      .tuto-card .lbl { font-size: 11px; opacity: 0.85; line-height: 1.2; text-align: center; }
+      .tuto-card:nth-child(1) { transform: rotate(-3deg); }
+      .tuto-card:nth-child(3) { transform: rotate(3deg); }
+      .tuto-card img { width: 64px; height: 64px; border-radius: 12px; }
+      .tuto-card .lbl { font-size: 11px; opacity: 0.85; line-height: 1.2; text-align: center; font-weight: 600; }
       .tuto-card .badge { font-size: 12px; font-weight: 800; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
-      .tuto-card.good .badge { color: #7dff9e; background: rgba(58, 208, 122, 0.16); border: 1px solid rgba(58, 208, 122, 0.45); }
-      .tuto-card.gravity .badge { color: #ffcf5a; background: rgba(255, 176, 32, 0.14); border: 1px solid rgba(255, 176, 32, 0.45); }
-      .tuto-card.avoid .badge { color: #ff8a8a; background: rgba(255, 93, 93, 0.14); border: 1px solid rgba(255, 93, 93, 0.45); }
+      .tuto-card.good .badge { color: #157347; background: rgba(58, 208, 122, 0.18); border: 1px solid rgba(21, 115, 71, 0.4); }
+      .tuto-card.gravity .badge { color: #a36400; background: rgba(255, 176, 32, 0.2); border: 1px solid rgba(163, 100, 0, 0.4); }
+      .tuto-card.avoid .badge { color: #c73535; background: rgba(255, 93, 93, 0.16); border: 1px solid rgba(199, 53, 53, 0.4); }
 
       .cta {
-        margin-top: 10px; padding: 16px 46px; font-size: 20px; font-weight: 800; border: none;
-        border-radius: 999px; background: #3ad07a; color: #06210f; cursor: pointer;
-        box-shadow: 0 8px 26px rgba(58, 208, 122, 0.45); animation: pulse 1.6s ease-in-out infinite;
+        margin-top: 10px; padding: 16px 46px; font-size: 20px; font-weight: 800;
+        border: 3px solid #fff; border-radius: 999px; background: #3ad07a; color: #06210f; cursor: pointer;
+        box-shadow: 0 8px 26px rgba(21, 115, 71, 0.4); animation: pulse 1.6s ease-in-out infinite;
       }
-      .cta.ghost { background: transparent; color: #fff; border: 2px solid rgba(255, 255, 255, 0.6); box-shadow: none; animation: none; }
+      .cta.ghost { background: #fff; color: #1d3557; border: 2px solid rgba(29, 53, 87, 0.35); box-shadow: 0 4px 14px rgba(29, 53, 87, 0.18); animation: none; }
       .cta:active { transform: scale(0.96); }
       @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
       /* ---- écran victoire ---- */
       .digit {
-        font-size: 96px; font-weight: 900; line-height: 1; color: #ffd447;
-        background: #171c33; border: 2px solid rgba(255, 212, 71, 0.4); border-radius: 22px;
-        padding: 6px 34px; margin: 2px 0; text-shadow: 0 0 26px rgba(255, 212, 71, 0.6);
+        font-size: 96px; font-weight: 900; line-height: 1; color: #7a5200;
+        background: linear-gradient(180deg, #ffe27a, #ffc93c); border: 4px solid #fff; border-radius: 22px;
+        padding: 6px 34px; margin: 2px 0; box-shadow: 0 10px 28px rgba(255, 176, 32, 0.5);
         animation: digitPop 0.4s cubic-bezier(0.2, 1.4, 0.4, 1);
       }
       @keyframes digitPop { from { transform: scale(0.3); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-      .group { font-size: 14px; color: #9fe3ff; } .meta { font-size: 12px; opacity: 0.6; } .tip { font-size: 14px; opacity: 0.9; }
+      .group { font-size: 14px; color: #2b78c2; font-weight: 700; } .meta { font-size: 12px; opacity: 0.65; } .tip { font-size: 14px; opacity: 0.9; }
 
       .rank {
         width: 92px; height: 92px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-        font-size: 54px; font-weight: 900; color: #0b0f1c; margin-bottom: 4px;
+        font-size: 54px; font-weight: 900; color: #0b0f1c; margin-bottom: 4px; border: 4px solid #fff;
         animation: rankPop 0.45s cubic-bezier(0.2, 1.5, 0.4, 1);
       }
       @keyframes rankPop { from { transform: scale(0) rotate(-25deg); } to { transform: scale(1) rotate(0); } }
-      .rank[data-rank='S'] { background: #ffd447; box-shadow: 0 0 34px rgba(255, 212, 71, 0.8); }
+      .rank[data-rank='S'] { background: #ffd447; box-shadow: 0 0 34px rgba(255, 176, 32, 0.8); }
       .rank[data-rank='A'] { background: #3ad07a; box-shadow: 0 0 26px rgba(58, 208, 122, 0.7); }
-      .rank[data-rank='B'] { background: #7fd4ff; box-shadow: 0 0 22px rgba(127, 212, 255, 0.6); }
+      .rank[data-rank='B'] { background: #7fd4ff; box-shadow: 0 0 22px rgba(64, 158, 220, 0.6); }
       .rank[data-rank='C'] { background: #c9c2b0; }
 
       /* ---- HUD ---- */
       .hud { position: absolute; top: 0; left: 0; right: 0; padding: 12px 14px; pointer-events: none; }
       .icon-btn {
-        position: absolute; top: 10px; pointer-events: auto; background: rgba(0, 0, 0, 0.35);
-        border: none; border-radius: 10px; color: #fff; font-size: 18px; width: 36px; height: 32px; cursor: pointer;
+        position: absolute; top: 10px; pointer-events: auto; background: rgba(255, 255, 255, 0.85);
+        border: none; border-radius: 10px; color: #1d3557; font-size: 18px; width: 36px; height: 32px; cursor: pointer;
+        box-shadow: 0 3px 8px rgba(29, 53, 87, 0.25);
       }
       .mute { left: 12px; } .restart { right: 12px; }
-      .bar { height: 14px; background: rgba(255, 255, 255, 0.14); border-radius: 999px; overflow: hidden; margin: 4px 52px 0; }
+      .bar {
+        height: 14px; background: rgba(255, 255, 255, 0.7); border: 2px solid #fff; border-radius: 999px;
+        overflow: hidden; margin: 4px 52px 0; box-shadow: 0 3px 8px rgba(29, 53, 87, 0.18);
+      }
       .bar span { display: block; height: 100%; background: linear-gradient(90deg, #3ad07a, #7fffa8); transition: width 0.2s ease; }
-      .score { margin-top: 6px; text-align: center; color: #fff; font-weight: 800; text-shadow: 0 1px 3px #000; }
-      .combo { margin-top: 2px; text-align: center; color: #ffd447; font-weight: 900; font-size: 18px; text-shadow: 0 1px 3px #000; }
+      .score { margin-top: 6px; text-align: center; color: #1d3557; font-weight: 800; text-shadow: 0 1px 0 #fff; }
+      .combo { margin-top: 2px; text-align: center; color: #ff9410; font-weight: 900; font-size: 18px; text-shadow: 0 2px 0 #fff; }
     `,
   ],
 })
@@ -200,7 +211,7 @@ export class GameComponent implements OnDestroy {
       this.game = new Phaser.Game({
         type: Phaser.AUTO,
         parent: this.host.nativeElement,
-        backgroundColor: '#0f1220',
+        transparent: true, // laisse voir le dégradé ciel/verdure du .wrap derrière le canvas
         scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH, width: 450, height: 800 },
       });
 
